@@ -30,10 +30,17 @@ Programmer: Ashley Fryer
         
         var movieID = movieObject.results["0"].id;
         var xhr = new XMLHttpRequest();
-        xhr.open("GET", "https://api.themoviedb.org/3/movie/" + movieID + "/similar?api_key=3daaa224d520ad43baab7a6b2c604dca&language=en-US&page=1", false);
+        xhr.open("GET", "https://api.themoviedb.org/3/movie/" + movieID + "/recommendations?api_key=3daaa224d520ad43baab7a6b2c604dca&language=en-US&page=1", false);
         xhr.send();
         console.log(xhr.status); // if this returns 200, then you are in like Flynn
         var movieDiscover = JSON.parse(xhr.responseText);
+        console.log(movieObject);
+        
+        var xhr = new XMLHttpRequest();
+        xhr.open("GET", "https://api.themoviedb.org/3/movie/now_playing?api_key=3daaa224d520ad43baab7a6b2c604dca&language=en-US&page=1", false);
+        xhr.send();
+        console.log(xhr.status); // if this returns 200, then you are in like Flynn
+        var moviePopular = JSON.parse(xhr.responseText);
         console.log(movieObject);
     </script>
     
@@ -54,12 +61,18 @@ Programmer: Ashley Fryer
 <h2>Title- N/A</h2>
     
 <p id="related"></p>
+    
+<p id="popular"></p>
 
 <script>
 //jQuery block that actually adds the JSON data to the 
 //webpage
     
 $("h2").text(movieObject.results["0"].original_title);
+    
+$("#related").text(movieDiscover.results["0"].original_title);
+    
+$("#popular").text(moviePopular.results["0"].original_title);
 
     
 </script>
