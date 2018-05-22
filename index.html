@@ -25,8 +25,16 @@ Programmer: Ashley Fryer
         xhr.open("GET", "https://api.themoviedb.org/3/search/movie?api_key=3daaa224d520ad43baab7a6b2c604dca&query=" + queryString, false);
         xhr.send();
         console.log(xhr.status); // if this returns 200, then you are in like Flynn
-        var bookObject = JSON.parse(xhr.responseText);
-        console.log(bookObject);
+        var movieObject = JSON.parse(xhr.responseText);
+        console.log(movieObject);
+        
+        var movieID = movieObject.results["0"].id;
+        var xhr = new XMLHttpRequest();
+        xhr.open("GET", "https://api.themoviedb.org/3/movie/" + movieID + "/similar?api_key=3daaa224d520ad43baab7a6b2c604dca&language=en-US&page=1", false);
+        xhr.send();
+        console.log(xhr.status); // if this returns 200, then you are in like Flynn
+        var movieDiscover = JSON.parse(xhr.responseText);
+        console.log(movieObject);
     </script>
     
     <!--JQuery Library-->
@@ -38,21 +46,21 @@ Programmer: Ashley Fryer
     <h1>Movie Database API</h1>
     
 <form action="index.html" method="get">
- Search by ISBN (ISBN-10 or ISBN-13)
- <input type="text" name="isbn">
- <button type="submit"><strong>Search for book</strong></button>
+ Search for a Movie:
+ <input type="text" name="title">
+ <button type="submit">Search for movie by title</button>
 </form>
     
-<div>
-    <p>Description: <span id="bookDescription">N/A</span></p>
+<h2>Title- N/A</h2>
     
-</div>
-    
+<p id="related"></p>
+
 <script>
 //jQuery block that actually adds the JSON data to the 
 //webpage
     
-$("h1").text(bookObject.items["0"].volumeInfo.title);
+$("h2").text(movieObject.results["0"].original_title);
+
     
 </script>
     
