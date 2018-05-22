@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+
+<!--
+File Name: index.html
+Project: The Movie Database API
+Date: 5/22/18
+Programmer: Ashley Fryer
+-->
+
+<html>
+
+<head>
+
+<!--Codes page as mobile first-->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="UTF-8">
+<meta name="author" content="Ashley Fryer">
+    
+<title>The Movie Database Project</title>
+    
+    <!--Fetch Movie Database API Info-->
+    <script>
+        var queryString = document.URL.substring( document.URL.indexOf('=') + 1 );
+        var xhr = new XMLHttpRequest();
+        xhr.open("GET", "https://api.themoviedb.org/3/search/movie?api_key=3daaa224d520ad43baab7a6b2c604dca&query=" + queryString, false);
+        xhr.send();
+        console.log(xhr.status); // if this returns 200, then you are in like Flynn
+        var bookObject = JSON.parse(xhr.responseText);
+        console.log(bookObject);
+    </script>
+    
+    <!--JQuery Library-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    
+</head>
+
+<body class="section group">
+    <h1>Movie Database API</h1>
+    
+<form action="index.html" method="get">
+ Search by ISBN (ISBN-10 or ISBN-13)
+ <input type="text" name="isbn">
+ <button type="submit"><strong>Search for book</strong></button>
+</form>
+    
+<div>
+    <p>Description: <span id="bookDescription">N/A</span></p>
+    
+</div>
+    
+<script>
+//jQuery block that actually adds the JSON data to the 
+//webpage
+    
+$("h1").text(bookObject.items["0"].volumeInfo.title);
+    
+</script>
+    
+</body>
+
+</html>
