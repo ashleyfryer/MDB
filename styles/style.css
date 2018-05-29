@@ -6,6 +6,7 @@ Date: 5/29/2018
 body {
     background-color: black;
     color: white;
+    padding: 2em;
 }
 
 header {
@@ -26,4 +27,20 @@ section#recommended {
 
 footer {
 
+}
+
+/** Tablet **/
+
+@media only screen and (min-width: 600px) {
+    body {
+        
+    }
+}
+
+/** Desktop **/
+
+@media only screen and (min-width: 768px) {
+    body {
+        
+    }
 }
