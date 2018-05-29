@@ -17,36 +17,63 @@ Programmer: Ashley Fryer
 <meta name="author" content="Ashley Fryer">
     
 <title>The Movie Database Project</title>
+ <!--JQuery Library-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     
     <!--Fetch Movie Database API Info-->
     <script>
-        var queryString = document.URL.substring( document.URL.indexOf('=') + 1 );
-        var xhr = new XMLHttpRequest();
-        xhr.open("GET", "https://api.themoviedb.org/3/search/movie?api_key=3daaa224d520ad43baab7a6b2c604dca&query=" + queryString, false);
-        xhr.send();
-        console.log(xhr.status); // if this returns 200, then you are in like Flynn
-        var movieObject = JSON.parse(xhr.responseText);
-        console.log(movieObject);
         
-        var movieID = movieObject.results["0"].id;
-        var xhr = new XMLHttpRequest();
-        xhr.open("GET", "https://api.themoviedb.org/3/movie/" + movieID + "/recommendations?api_key=3daaa224d520ad43baab7a6b2c604dca&language=en-US&page=1", false);
-        xhr.send();
-        console.log(xhr.status); // if this returns 200, then you are in like Flynn
-        var movieDiscover = JSON.parse(xhr.responseText);
-        console.log(movieObject);
+        function getInput() {
+            var query = $('#search').val();
+            return query;
+        }
         
-        var xhr = new XMLHttpRequest();
-        xhr.open("GET", "https://api.themoviedb.org/3/movie/now_playing?api_key=3daaa224d520ad43baab7a6b2c604dca&language=en-US&page=1", false);
-        xhr.send();
-        console.log(xhr.status); // if this returns 200, then you are in like Flynn
-        var moviePopular = JSON.parse(xhr.responseText);
-        console.log(movieObject);
-    </script>
-    
-    <!--JQuery Library-->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    
+        function nowPlaying() {
+             var xhr = new XMLHttpRequest();
+             xhr.open("GET", "https://api.themoviedb.org/3/movie/now_playing?api_key=3daaa224d520ad43baab7a6b2c604dca&language=en-US&page=1", false);
+             xhr.send();
+            console.log(xhr.status); // if this returns 200, then you are in like Flynn
+            var moviePopular = JSON.parse(xhr.responseText);
+            console.log(moviePopular);
+            
+            $("#popular").text(moviePopular.results["0"].original_title);
+            $("#popular1").text(moviePopular.results["1"].original_title);
+            $("#popular2").text(moviePopular.results["2"].original_title);
+        }
+        
+        function recommendMovie(movie) {
+            var movieID = movie.results["0"].id;
+            var xhr = new XMLHttpRequest();
+            xhr.open("GET", "https://api.themoviedb.org/3/movie/" + movieID + "/recommendations?api_key=3daaa224d520ad43baab7a6b2c604dca&language=en-US&page=1", false);
+            xhr.send();
+            console.log(xhr.status); // if this returns 200, then you are in like Flynn
+            var movieDiscover = JSON.parse(xhr.responseText);
+            
+            
+            $("#related").text(movieDiscover.results["0"].original_title);
+            $("#related1").text(movieDiscover.results["1"].original_title);
+            $("#related2").text(movieDiscover.results["2"].original_title);
+            $("#related3").text(movieDiscover.results["3"].original_title);
+            $("#related4").text(movieDiscover.results["4"].original_title);
+        }
+       
+        function getMovie(input) {
+            var xhr = new XMLHttpRequest();
+            xhr.open("GET", "https://api.themoviedb.org/3/search/movie?api_key=3daaa224d520ad43baab7a6b2c604dca&query=" + input, false);
+            xhr.send();
+            console.log(xhr.status); // if this returns 200, then you are in like Flynn
+            var movieObject = JSON.parse(xhr.responseText);
+            console.log(movieObject);
+            $("h2").text(movieObject.results["0"].original_title);
+            
+            recommendMovie(movieObject);
+            nowPlaying();
+        }
+        
+        
+        
+        
+    </script> 
 </head>
 
 <body class="section group">
@@ -55,6 +82,7 @@ Programmer: Ashley Fryer
     <h1>Movie Database API</h1>
 </header>
     
+<<<<<<< HEAD
 <!--Now Playing-->   
 <section>
     <h2>Now Playing</h2>
@@ -66,6 +94,12 @@ Programmer: Ashley Fryer
  <input type="text" name="title">
  <button type="submit">Search for movie by title</button>
 </form>
+=======
+
+<p>Search for a Movie:</p>
+ <input type="text" name="title" id="search">
+ <button onclick="getMovie(getInput());">Search for movie by title</button>
+>>>>>>> ben-edit
     
 <main>
 <h2>Title- N/A</h2>
@@ -85,6 +119,7 @@ Genre(s):
 <p id="genre"></p>
 </main>
     
+<<<<<<< HEAD
 <footer>
     All information comes from the TMBD API.
 </footer>
@@ -93,14 +128,28 @@ Genre(s):
     This is the copyright
 </copyright>
     
+=======
+    <p id="related"></p>
+    <p id="related1"></p>
+    <p id="related2"></p>
+    <p id="related3"></p>
+    <p id="related4"></p>
+    
+    <p id="popular"></p>
+    <p id="popular1"></p>
+    <p id="popular2"></p>
+    
+
+>>>>>>> ben-edit
 <script>
 //jQuery block that actually adds the JSON data to the 
 //webpage
     
-$("h2").text(movieObject.results["0"].original_title);
+//$("h2").text(movieObject.results["0"].original_title);
     
-$("#related").text(movieDiscover.results["0"].original_title);
+//$("#related").text(movieDiscover.results["0"].original_title);
     
+<<<<<<< HEAD
 $("#popular").text(moviePopular.results["0"].original_title);
     
 $("#poster").attr("src", movieObject.results["0"].poster_path);
@@ -110,6 +159,9 @@ $("#date").text(movieObject.results["0"].release_date);
 $("#overview").text(movieObject.results["0"].overview);
     
 $("#language").text(movieObject.results["0"].original_language);
+=======
+//$("#popular").text(moviePopular.results["0"].original_title);
+>>>>>>> ben-edit
 
 $("#popularity").text(movieObject.results["0"].vote_average);
     
