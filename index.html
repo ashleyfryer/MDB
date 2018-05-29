@@ -1,4 +1,4 @@
-<!DOCTYPE html>
++<!DOCTYPE html>
 
 <!--
 File Name: index.html
@@ -23,6 +23,9 @@ Programmer: Ashley Fryer
     <!--Fetch Movie Database API Info-->
     <script>
         
+        var imageurlsmall = "https://image.tmdb.org/t/p/w200";
+        var urlimglarge = "https://image.tmdb.org/t/p/w500"
+        
         function getInput() {
             var query = $('#search').val();
             return query;
@@ -36,14 +39,16 @@ Programmer: Ashley Fryer
             var moviePopular = JSON.parse(xhr.responseText);
             console.log(moviePopular);
             
-            var imageurl = "https://image.tmdb.org/t/p/w100/"
-            
             $("#popular").text(moviePopular.results["0"].original_title);
-            $("#popularimg").attr("src", imageurl + moviePopular.results["0"].poster_path);
+            $("#popularimg").attr("src", imageurlsmall + moviePopular.results["0"].poster_path);
             $("#popular1").text(moviePopular.results["1"].original_title);
+            $("#popular1img").attr("src", imageurlsmall + moviePopular.results["1"].poster_path);
             $("#popular2").text(moviePopular.results["2"].original_title);
+            $("#popular2img").attr("src", imageurlsmall + moviePopular.results["2"].poster_path);
             $("#popular3").text(moviePopular.results["3"].original_title);
+            $("#popular3img").attr("src", imageurlsmall + moviePopular.results["3"].poster_path);
             $("#popular4").text(moviePopular.results["4"].original_title);
+            $("#popular4img").attr("src", imageurlsmall + moviePopular.results["4"].poster_path);
         }
         
         function recommendMovie(movie) {
@@ -54,12 +59,16 @@ Programmer: Ashley Fryer
             console.log(xhr.status); // if this returns 200, then you are in like Flynn
             var movieDiscover = JSON.parse(xhr.responseText);
             
-            
             $("#related").text(movieDiscover.results["0"].original_title);
+            $("#relatedimg").attr("src", imageurlsmall + movieDiscover.results["0"].poster_path);
             $("#related1").text(movieDiscover.results["1"].original_title);
+            $("#related1img").attr("src", imageurlsmall + movieDiscover.results["1"].poster_path);
             $("#related2").text(movieDiscover.results["2"].original_title);
+            $("#related2img").attr("src", imageurlsmall + movieDiscover.results["2"].poster_path);
             $("#related3").text(movieDiscover.results["3"].original_title);
+            $("#related3img").attr("src", imageurlsmall + movieDiscover.results["3"].poster_path);
             $("#related4").text(movieDiscover.results["4"].original_title);
+            $("#related4img").attr("src", imageurlsmall + movieDiscover.results["4"].poster_path);
         }
        
         function getMovie(input) {
@@ -69,10 +78,11 @@ Programmer: Ashley Fryer
             console.log(xhr.status); // if this returns 200, then you are in like Flynn
             var movieObject = JSON.parse(xhr.responseText);
             console.log(movieObject);
+            
             $("main").show();
             $("#nowplaying").hide();
             $("#movietitle").text(movieObject.results["0"].original_title);
-            $("#poster").attr("src", movieObject.results["0"].poster_path);
+            $("#poster").attr("src", urlimglarge + movieObject.results["0"].poster_path);
             $("#date").text(movieObject.results["0"].release_date);
             $("#overview").text(movieObject.results["0"].overview);
             $("#language").text(movieObject.results["0"].original_language);
@@ -97,9 +107,13 @@ Programmer: Ashley Fryer
     <p id="popular"></p>
     <img id="popularimg" src="">
     <p id="popular1"></p>
+    <img id="popular1img" src="">
     <p id="popular2"></p>
+    <img id="popular2img" src="">
     <p id="popular3"></p>
+    <img id="popular3img" src="">
     <p id="popular4"></p>
+    <img id="popular4img" src="">
 </section>
 
 <!--Search form-->
@@ -109,9 +123,7 @@ Programmer: Ashley Fryer
     
 <main>
 <h2 id="movietitle">Title- N/A</h2>
-Year:    
-<p id="year"></p>
-Image:   
+
 <img id="poster" src= " ">
 Date:
 <p id="date"></p>
@@ -127,10 +139,15 @@ Genre(s):
 
 <section>
     <p id="related"></p>
+    <img id= "relatedimg" src= "">
     <p id="related1"></p>
+    <img id= "related1img" src= "">
     <p id="related2"></p>
+    <img id= "related2img" src= "">
     <p id="related3"></p>
-    <p id="related4"></p>    
+    <img id= "related3img" src= "">
+    <p id="related4"></p>
+    <img id= "related4img" src= "">
 </section>
     
 <footer>
