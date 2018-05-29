@@ -36,8 +36,10 @@ Programmer: Ashley Fryer
             var moviePopular = JSON.parse(xhr.responseText);
             console.log(moviePopular);
             
+            var imageurl = "https://image.tmdb.org/t/p/w100/"
+            
             $("#popular").text(moviePopular.results["0"].original_title);
-            $("#popularimg").attr("src", moviePopular.results["0"].poster_path);
+            $("#popularimg").attr("src", imageurl + moviePopular.results["0"].poster_path);
             $("#popular1").text(moviePopular.results["1"].original_title);
             $("#popular2").text(moviePopular.results["2"].original_title);
             $("#popular3").text(moviePopular.results["3"].original_title);
