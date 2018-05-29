@@ -39,6 +39,8 @@ Programmer: Ashley Fryer
             $("#popular").text(moviePopular.results["0"].original_title);
             $("#popular1").text(moviePopular.results["1"].original_title);
             $("#popular2").text(moviePopular.results["2"].original_title);
+            $("#popular3").text(moviePopular.results["3"].original_title);
+            $("#popular4").text(moviePopular.results["4"].original_title);
         }
         
         function recommendMovie(movie) {
@@ -64,7 +66,9 @@ Programmer: Ashley Fryer
             console.log(xhr.status); // if this returns 200, then you are in like Flynn
             var movieObject = JSON.parse(xhr.responseText);
             console.log(movieObject);
-            $("h2").text(movieObject.results["0"].original_title);
+            $("main").show();
+            $("#nowplaying").hide();
+            $("#movietitle").text(movieObject.results["0"].original_title);
             $("#poster").attr("src", movieObject.results["0"].poster_path);
             $("#date").text(movieObject.results["0"].release_date);
             $("#overview").text(movieObject.results["0"].overview);
@@ -73,7 +77,6 @@ Programmer: Ashley Fryer
             $("#genre").text(movieObject.results["0"].genre_ids);
             
             recommendMovie(movieObject);
-            nowPlaying();
         }
         
     </script> 
@@ -86,31 +89,26 @@ Programmer: Ashley Fryer
 </header>
     
 <!--Now Playing-->   
-<section>
+<section id="nowplaying">
     <h2>Now Playing</h2>
     <p id="popular"></p>
     <p id="popular1"></p>
     <p id="popular2"></p>
+    <p id="popular3"></p>
+    <p id="popular4"></p>
 </section>
 
-<!--Search form--> 
-<form action="index.html" method="get">
- Search for a Movie:
- <input type="text" name="title">
- <button type="submit">Search for movie by title</button>
-</form>
-
-
+<!--Search form-->
 <p>Search for a Movie:</p>
  <input type="text" name="title" id="search">
  <button onclick="getMovie(getInput());">Search for movie by title</button>
     
 <main>
-<h2>Title- N/A</h2>
+<h2 id="movietitle">Title- N/A</h2>
 Year:    
 <p id="year"></p>
 Image:   
-<img id="poster" src= "">
+<img id="poster" src= " ">
 Date:
 <p id="date"></p>
 Overview:
@@ -136,9 +134,18 @@ Genre(s):
 </footer>
     
 <copyright>
-    This is the copyright
+    This is the copyright.
 </copyright>
     
 </body>
+    
+<script>
+
+$(window).on( "load", function() {
+        nowPlaying();
+        $("main").hide();
+    });
+    
+</script>
 
 </html>
