@@ -37,6 +37,7 @@ Programmer: Ashley Fryer
             console.log(moviePopular);
             
             $("#popular").text(moviePopular.results["0"].original_title);
+            $("#popularimg").attr("src", moviePopular.results["0"].poster_path);
             $("#popular1").text(moviePopular.results["1"].original_title);
             $("#popular2").text(moviePopular.results["2"].original_title);
             $("#popular3").text(moviePopular.results["3"].original_title);
@@ -92,6 +93,7 @@ Programmer: Ashley Fryer
 <section id="nowplaying">
     <h2>Now Playing</h2>
     <p id="popular"></p>
+    <img id="popularimg" src="">
     <p id="popular1"></p>
     <p id="popular2"></p>
     <p id="popular3"></p>
