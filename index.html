@@ -35,7 +35,7 @@ Programmer: MDB Group
 <!--Now Playing-->
 <section id="nowplaying" class="section group">
     <h2>Now Playing</h2>
-    <p class="col span_2_of_12">
+    <p class="col span_2_of_12 clickable">
     <img id="popularimg" src="" href="">
     <span id="popular"></span>
     </p>
@@ -60,7 +60,7 @@ Programmer: MDB Group
 <!--Search form-->
 <p>Search for a Movie:</p>
  <input type="text" name="title" id="search">
- <button onclick="getMovie(getInput());">Search for movie by title</button>
+ <button id="trigger" onclick="getMovie(getInput());">Search for movie by title</button>
 
 <main>
 <h2 id="movietitle">Title- N/A</h2>

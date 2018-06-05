@@ -21,15 +21,23 @@ function nowPlaying() {
 
     $("#popular").text(moviePopular.results["0"].original_title);
     $("#popularimg").attr("src", imageurlsmall + moviePopular.results["0"].poster_path);
+    $("#popularimg").wrap("<a href='#' onclick='getMovie(\"" + moviePopular.results["0"].original_title + "\")'></a>");
     $("#popular1").text(moviePopular.results["1"].original_title);
     $("#popular1img").attr("src", imageurlsmall + moviePopular.results["1"].poster_path);
+    $("#popular1img").wrap("<a href='#' onclick='getMovie(\"" + moviePopular.results["1"].original_title + "\")'></a>");
     $("#popular2").text(moviePopular.results["2"].original_title);
     $("#popular2img").attr("src", imageurlsmall + moviePopular.results["2"].poster_path);
+    $("#popular2img").wrap("<a href='#' onclick='getMovie(\"" + moviePopular.results["2"].original_title + "\")'></a>");
     $("#popular3").text(moviePopular.results["3"].original_title);
     $("#popular3img").attr("src", imageurlsmall + moviePopular.results["3"].poster_path);
+    $("#popular3img").wrap("<a href='#' onclick='getMovie(\"" + moviePopular.results["3"].original_title + "\")'></a>");
     $("#popular4").text(moviePopular.results["4"].original_title);
     $("#popular4img").attr("src", imageurlsmall + moviePopular.results["4"].poster_path);
+    $("#popular4img").wrap("<a href='#' onclick='getMovie(\"" + moviePopular.results["4"].original_title + "\")'></a>");
+    
 }
+
+
 
 function recommendMovie(movie) {
     var movieID = movie.results["0"].id;
@@ -70,5 +78,15 @@ function getMovie(input) {
     $("#genre").text(movieObject.results["0"].genre_ids);
 
     recommendMovie(movieObject);
+<<<<<<< HEAD
     
 }
+=======
+}
+
+$(document).keypress(function(e){
+            if (e.which == 13){
+                $("#trigger").click();
+            }
+        });
+>>>>>>> master
