@@ -71,3 +71,9 @@ function getMovie(input) {
 
     recommendMovie(movieObject);
 }
+
+$(document).keypress(function(e){
+            if (e.which == 13){
+                $("#trigger").click();
+            }
+        });
