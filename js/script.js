@@ -2,6 +2,7 @@ $(window).on( "load", function() {
         nowPlaying();
         $("main").hide();
     });
+
 var imageurlsmall = "https://image.tmdb.org/t/p/w200";
 var urlimglarge = "https://image.tmdb.org/t/p/w500"
 
