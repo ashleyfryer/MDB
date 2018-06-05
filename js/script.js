@@ -49,14 +49,19 @@ function recommendMovie(movie) {
 
     $("#related").text(movieDiscover.results["0"].original_title);
     $("#relatedimg").attr("src", imageurlsmall + movieDiscover.results["0"].poster_path);
+    $("#relatedimg").wrap("<a href='#' onclick='getMovie(\"" + movieDiscover.results["0"].original_title + "\")'></a>");
     $("#related1").text(movieDiscover.results["1"].original_title);
     $("#related1img").attr("src", imageurlsmall + movieDiscover.results["1"].poster_path);
+    $("#related1img").wrap("<a href='#' onclick='getMovie(\"" + movieDiscover.results["1"].original_title + "\")'></a>");
     $("#related2").text(movieDiscover.results["2"].original_title);
     $("#related2img").attr("src", imageurlsmall + movieDiscover.results["2"].poster_path);
+    $("#related2img").wrap("<a href='#' onclick='getMovie(\"" + movieDiscover.results["2"].original_title + "\")'></a>");
     $("#related3").text(movieDiscover.results["3"].original_title);
     $("#related3img").attr("src", imageurlsmall + movieDiscover.results["3"].poster_path);
+    $("#related3img").wrap("<a href='#' onclick='getMovie(\"" + movieDiscover.results["3"].original_title + "\")'></a>");
     $("#related4").text(movieDiscover.results["4"].original_title);
     $("#related4img").attr("src", imageurlsmall + movieDiscover.results["4"].poster_path);
+    $("#related4img").wrap("<a href='#' onclick='getMovie(\"" + movieDiscover.results["4"].original_title + "\")'></a>");
 }
 
 function getMovie(input) {
