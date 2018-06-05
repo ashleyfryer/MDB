@@ -78,15 +78,13 @@ function getMovie(input) {
     $("#genre").text(movieObject.results["0"].genre_ids);
 
     recommendMovie(movieObject);
-<<<<<<< HEAD
+
     
 }
-=======
-}
+
 
 $(document).keypress(function(e){
             if (e.which == 13){
                 $("#trigger").click();
             }
         });
->>>>>>> master
