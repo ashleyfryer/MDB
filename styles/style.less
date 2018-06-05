@@ -27,7 +27,7 @@ h1 {
     color: darkgoldenrod;
     text-align: center;
     font-family: 'Michroma', sans-serif;
-    letter-spacing: 18pt;
+    letter-spacing: 0.5em;
     word-spacing: 2.1pt;
     margin: 1.5em;
     font-weight: bold;
@@ -98,10 +98,10 @@ li a:hover {
 	transition: color 1s 0.25s ease-in-out;
 }
 
-/* Recommended Titles Styling */
+/* Related Titles Styling */
 
 #recommended img {
-        width: 100%;
+    width: 100%;
 }
 
 /* Footer and Copyright */
@@ -121,6 +121,14 @@ copyright {
     font-style: italic;
     text-align: center;
     padding: 1em;
+}
+
+/** Phone **/
+
+@media only screen and (max-width: 599px) {
+    h1 {
+    font-size: 0.8em;
+    }
 }
 
 /** Tablet **/
