@@ -1,7 +1,8 @@
-$(window).on( "load", function() {
+$(window).on("load", function () {
         nowPlaying();
         $("main").hide();
     });
+
 var imageurlsmall = "https://image.tmdb.org/t/p/w200";
 var urlimglarge = "https://image.tmdb.org/t/p/w500"
 
@@ -69,4 +70,5 @@ function getMovie(input) {
     $("#genre").text(movieObject.results["0"].genre_ids);
 
     recommendMovie(movieObject);
+    
 }
