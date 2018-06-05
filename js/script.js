@@ -80,12 +80,8 @@ function getMovie(input) {
     recommendMovie(movieObject);
 }
 
-<<<<<<< HEAD
-
-=======
 $(document).keypress(function(e){
             if (e.which == 13){
                 $("#trigger").click();
             }
         });
->>>>>>> f49df4550382bbdd9b0c38189e7ad52511a671a0
