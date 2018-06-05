@@ -7,30 +7,120 @@ body {
     background-color: black;
     color: white;
     padding: 2em;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.1em;
+    line-height: 1.5em;
 }
 
 header {
     text-align: center;
+    height: auto;
+    margin-top: 0px;
+    margin-bottom: 5px;
+    position: relative;
+    color: #FFF;
 }
 
-#nowplaying {
-    img {
-        width: 100%;
-    }
+h1 {
+    font-size: 2em;
+    line-height: 1.5em;
+    color: darkgoldenrod;
+    text-align: center;
+    font-family: 'Michroma', sans-serif;
+    letter-spacing: 18pt;
+    word-spacing: 2.1pt;
+    margin: 1.5em;
+    font-weight: bold;
+    text-transform: uppercase;
 }
+
+h2 {
+    font-size: 1.1em;
+    line-height: 2em;
+    padding-top: 10px;
+    text-align: center;
+    font-family: 'Orbitron', serif;
+    color: darkslategrey;
+}
+
+h3, h4 {
+    font-size: 1.5em;
+    letter-spacing: 1.3pt;
+    font-family: 'Orbitron', sans-serif;
+    line-height: 2em;
+    padding: 0.5em;
+}
+
+p {
+    font-family: 'Michroma', sans-serif;
+    font-size: 0.6em;
+}
+
+/* Main Movie Details Styling */
 
 main {
-    
+    font-family: sans-serif;
 }
 
-#recommended {
-    img {
-        width: 100%;
-    }
+#poster {
+    margin: 0 auto;
+    display: block;
+    width: 100%;
+    padding: 2em;
 }
+
+/* Now Playing and Recommended Titles Styling */
+
+#nowplaying img {
+    width: 100%;
+    }
+
+ul	{
+	font-size: 1em;
+    letter-spacing: 1.2pt;
+    padding-top: 30px;
+    text-align: center;
+    list-style-type: none;
+}
+
+li	{
+	padding: 15px;
+    display: inline-block;
+}
+
+li a {
+    text-decoration: none;
+    color: darkslategrey;
+}
+
+li a:hover {
+	color: #F59B24;
+	transition: color 1s 0.25s ease-in-out;
+}
+
+/* Recommended Titles Styling */
+
+#recommended img {
+        width: 100%;
+}
+
+/* Footer and Copyright */
 
 footer {
+    color: #000000;
+    font-size: .80em;
+    text-align: center;
+    padding: 5px;
+    background-color: #D2691E;
+    font-family: 'Orbitron', sans-serif;
+}
 
+copyright {
+    color: #FFF;
+    font-size: .80em;
+    font-style: italic;
+    text-align: center;
+    padding: 1em;
 }
 
 /** Tablet **/
@@ -44,7 +134,11 @@ footer {
 /** Desktop **/
 
 @media only screen and (min-width: 768px) {
+    
     body {
-        
+    }
+    
+    #poster {
+    width: 50%;
     }
 }
