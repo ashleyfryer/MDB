@@ -1,4 +1,4 @@
-+<!DOCTYPE html>
+<!DOCTYPE html>
 
 <!--
 File Name: index.html
@@ -18,6 +18,7 @@ Programmer: MDB Group
 <title>The Movie Database Project</title>
     
 <link href="styles/style.css" rel="stylesheet">
+<link href="styles/grid.css" rel="stylesheet">
     
  <!--JQuery Library-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -104,18 +105,28 @@ Programmer: MDB Group
 </header>
     
 <!--Now Playing-->   
-<section id="nowplaying">
+<section id="nowplaying" class="section group">
     <h2>Now Playing</h2>
-    <p id="popular"></p>
+    <p class="col span_2_of_12"> 
     <img id="popularimg" src="" href="">
-    <p id="popular1"></p>
-    <img id="popular1img" src="">
-    <p id="popular2"></p>
-    <img id="popular2img" src="">
-    <p id="popular3"></p>
-    <img id="popular3img" src="">
-    <p id="popular4"></p>
-    <img id="popular4img" src="">
+    <span id="popular"></span>
+    </p>
+    <p class="col span_2_of_12"> 
+    <img id="popular1img" src="" href="">
+    <span id="popular1"></span>
+    </p>
+    <p class="col span_2_of_12"> 
+    <img id="popular2img" src="" href="">
+    <span id="popular2"></span>
+    </p>
+    <p class="col span_2_of_12"> 
+    <img id="popular3img" src="" href="">
+    <span id="popular3"></span>
+    </p>
+    <p class="col span_2_of_12"> 
+    <img id="popular4img" src="" href="">
+    <span id="popular4"></span>
+    </p>
 </section>
 
 <!--Search form-->
@@ -139,17 +150,27 @@ Genre(s):
 <p id="genre"></p>
 </main>
 
-<section id="recommended">
-    <p id="related"></p>
-    <img id= "relatedimg" src= "">
-    <p id="related1"></p>
-    <img id= "related1img" src= "">
-    <p id="related2"></p>
-    <img id= "related2img" src= "">
-    <p id="related3"></p>
-    <img id= "related3img" src= "">
-    <p id="related4"></p>
-    <img id= "related4img" src= "">
+<section id="recommended" class="section group">
+    <p class="col span_2_of_12"> 
+    <img id="relatedimg" src="" href="">
+    <span id="related"></span>
+    </p>
+    <p class="col span_2_of_12">
+    <img id="related1img" src="" href="">
+    <span id="related1"></span>
+    </p>
+    <p class="col span_2_of_12"> 
+    <img id="related2img" src="" href="">
+    <span id="related2"></span>
+    </p>
+    <p class="col span_2_of_12"> 
+    <img id="related3img" src="" href="">
+    <span id="related3"></span>
+    </p>
+    <p class="col span_2_of_12"> 
+    <img id="related4img" src="" href="">
+    <span id="related4"></span>
+    </p>
 </section>
     
 <footer>

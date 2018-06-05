@@ -1,0 +1,107 @@
+/*
+File Name: grid.css
+Date: 6/4/2018
+Programmer: Ashley Fryer
+*/
+
+/* Adapted from: http://www.responsivegridsystem.com (media queries changed to mobile first) 
+
+This grid divides the page into twelve sections. The span elements determine the width of the element on the page, describing how many units out of 12 the span should use. For example, span_3_of_12 takes up one fourth of the width of the div*/
+
+/*  SECTIONS  */
+.section {
+	padding: 0px;
+	margin: 0px;
+}
+
+/*  COLUMN SETUP  */
+.col {
+	display: block;
+    float:left;
+	margin: 1% 0 1% 1.6%;
+}
+
+/* The first column has a margin of zero so that all of the elements sit on the width of the page. The left padding makes the bullets align in the menu section of the tablet version. */
+.col:first-child { 
+    margin-left: 0; 
+    padding-left: 1em;
+}
+
+/*  GROUPING  */
+
+.group:before,
+.group:after { content:""; display:table; }
+.group:after { clear:both;}
+
+/* Mobile first grid system has elements show at 100% width on mobile devices. */
+.span_1_of_12, .span_2_of_12, .span_3_of_12, .span_4_of_12, .span_5_of_12, .span_6_of_12, .span_7_of_12, .span_8_of_12, .span_9_of_12, .span_10_of_12, .span_11_of_12, .span_12_of_12 {
+        width: 100%;
+}
+
+/*DESKTOP*/
+@media only screen and (min-width: 675px) {
+
+/* Percentages for grid system based on the number of units out of twelve */
+    
+.span_12_of_12 {
+	width: 100%;
+}
+
+.span_11_of_12 {
+  	width: 91.53%;
+}
+.span_10_of_12 {
+  	width: 83.06%;
+}
+
+.span_9_of_12 {
+  	width: 74.6%;
+}
+
+.span_8_of_12 {
+  	width: 66.13%;
+}
+
+.span_7_of_12 {
+  	width: 57.66%;
+}
+
+.span_6_of_12 {
+  	width: 49.2%;
+}
+
+.span_5_of_12 {
+  	width: 40.73%;
+}
+
+.span_4_of_12 {
+  	width: 32.26%;
+}
+
+.span_3_of_12 {
+  	width: 23.8%;
+}
+
+/** Edited from 15.33% **/
+.span_2_of_12 {
+  	width: 18%;
+}
+
+.span_1_of_12 {
+  	width: 6.866%;
+}
+
+/* Margin for fourth element set at 1%; element displays on second line */
+
+}
+
+/*  DESKTOP  */
+
+@media only screen and (min-width: 1025px) {
+
+    
+/* Margin for fourth element set at 1%; element displays on second line */
+    .col:nth-child(4) { 
+        margin-left: 1.6%;
+    }
+}
