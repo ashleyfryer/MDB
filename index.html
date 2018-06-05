@@ -95,6 +95,9 @@ Programmer: MDB Group
             recommendMovie(movieObject);
         }
         
+        $(".clickable").on("click", function() {
+            getMovie(recommendMovie());
+        });
     </script> 
 </head>
 
@@ -107,7 +110,7 @@ Programmer: MDB Group
 <!--Now Playing-->   
 <section id="nowplaying" class="section group">
     <h2>Now Playing</h2>
-    <p class="col span_2_of_12"> 
+    <p class="col span_2_of_12 clickable"> 
     <img id="popularimg" src="" href="">
     <span id="popular"></span>
     </p>
