@@ -82,10 +82,23 @@ function getMovie(input) {
     $("#popularity").text(movieObject.results["0"].vote_average);
     $("#genre").text(movieObject.results["0"].genre_ids);
 
+    
+    $("#li1").text(movieObject.results["1"].original_title);
+    $("#li1").wrap("<a href='#' onclick='getMovie(\"" + movieObject.results["1"].original_title + "\")'></a>");
+    $("#li2").text(movieObject.results["2"].original_title);
+    $("#li2").wrap("<a href='#' onclick='getMovie(\"" + movieObject.results["2"].original_title + "\")'></a>");
+    $("#li3").text(movieObject.results["3"].original_title);
+    $("#li3").wrap("<a href='#' onclick='getMovie(\"" + movieObject.results["3"].original_title + "\")'></a>");
+
     recommendMovie(movieObject);
 
     
 }
+
+$("#toggle").next().hide();
+$("#toggle").on("click", function() {
+    $(this).next().slideToggle();
+});
 
 
 $(document).keypress(function(e){
