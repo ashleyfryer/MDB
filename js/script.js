@@ -89,15 +89,19 @@ function getMovie(input) {
     $("#li2").wrap("<a href='#' onclick='getMovie(\"" + movieObject.results["2"].original_title + "\")'></a>");
     $("#li3").text(movieObject.results["3"].original_title);
     $("#li3").wrap("<a href='#' onclick='getMovie(\"" + movieObject.results["3"].original_title + "\")'></a>");
-
+    
     recommendMovie(movieObject);
-
     
 }
 
-$("#toggle").next().hide();
-$("#toggle").on("click", function() {
-    $(this).next().slideToggle();
+$("#toggle").hide();
+$("#togglethis").hide();
+
+$("#trigger").on("click", function () {
+    $("#toggle").show().on("click", function() {
+        $("#toggle").next().slideToggle("ul");
+    });
+    
 });
 
 
