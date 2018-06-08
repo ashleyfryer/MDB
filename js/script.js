@@ -1,6 +1,8 @@
 $(window).on("load", function () {
         nowPlaying();
         $("main").hide();
+        $("#toggle").hide();
+        $("#togglethis").hide();
     });
 
 var imageurlsmall = "https://image.tmdb.org/t/p/w200";
@@ -94,17 +96,22 @@ function getMovie(input) {
     
 }
 
-$("#toggle").hide();
-$("#togglethis").hide();
+//Hides "Not the right movie?" and alternate movie options 
+//unless you search for something
 
+
+//When you click the search button, "Not the right movie?" shows
 $("#trigger").on("click", function () {
-    $("#toggle").show().on("click", function() {
-        $("#toggle").next().slideToggle("ul");
-    });
-    
+    $("#toggle").show();
+    $("#togglethis").hide();
 });
 
+//When you click "Not the right movie?", alternate options show
+$("#toggle").on("click", function() {
+    $("#toggle").next().slideToggle("ul");
+});
 
+//When you click enter, search bar is clicked
 $(document).keypress(function(e){
             if (e.which == 13){
                 $("#trigger").click();
