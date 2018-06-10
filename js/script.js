@@ -91,6 +91,8 @@ function getMovie(input) {
     $("#li2").wrap("<a href='#' onclick='getMovie(\"" + movieObject.results["2"].original_title + "\")'></a>");
     $("#li3").text(movieObject.results["3"].original_title);
     $("#li3").wrap("<a href='#' onclick='getMovie(\"" + movieObject.results["3"].original_title + "\")'></a>");
+    $("#li4").text(movieObject.results["4"].original_title);
+    $("#li4").wrap("<a href='#' onclick='getMovie(\"" + movieObject.results["4"].original_title + "\")'></a>");
     
     recommendMovie(movieObject);
     
