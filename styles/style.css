@@ -81,7 +81,7 @@ main {
 }
 
 
-/* Now Playing and Recommended Titles Styling */
+/* Now Playing Styling */
 
 #movietitle {
     font-family: 'Michroma', sans-serif;
@@ -97,7 +97,8 @@ main {
     width: 100%;
 }
 
-ul {
+
+/*ul {
     font-size: 1em;
     letter-spacing: 1.2pt;
     padding-top: 30px;
@@ -118,7 +119,7 @@ li a {
 li a:hover {
     color: #F59B24;
     transition: color 1s 0.25s ease-in-out;
-}
+}*/
 
 
 /* Search Box Styling */
@@ -140,15 +141,20 @@ button {
     color: dodgerblue;
 }
 
+
 /* Related Titles Styling */
+
 #recommended {
     text-align: center;
 }
+
 #recommended img {
     width: 100%;
 }
 
+
 /* Footer and Copyright */
+
 footer {
     color: #000000;
     font-size: .80em;
@@ -157,6 +163,7 @@ footer {
     background-color: #F59B24;
     font-family: 'Share', sans-serif;
 }
+
 copyright {
     color: #FFF;
     font-size: .80em;
@@ -166,16 +173,21 @@ copyright {
     padding: 1em;
 }
 
+
 /** Phone **/
+
 @media only screen and (max-width: 599px) {
     h1 {
         font-size: 0.8em;
     }
 }
 
+
 /** Tablet **/
 
+
 /** Desktop **/
+
 @media only screen and (min-width: 768px) {
     #poster {
         width: 50%;
