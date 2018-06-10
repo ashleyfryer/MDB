@@ -20,7 +20,7 @@ Programmer: MDB Group
 <link href="styles/style.css" rel="stylesheet">
 <link href="styles/grid.css" rel="stylesheet">
     
-<link href="https://fonts.googleapis.com/css?family=Anton|Michroma|Orbitron" rel="stylesheet">    
+<link href="https://fonts.googleapis.com/css?family=Anton|Michroma|Orbitron|Share" rel="stylesheet">    
 
  <!--JQuery Library-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -60,7 +60,7 @@ Programmer: MDB Group
 </section>
 
 <!--Search form-->
-<p>Search for a Movie:</p>
+<p class="searchform">Search for a Movie:</p>
  <input type="text" name="title" id="search">
  <button id="trigger" onclick="getMovie(getInput());">Search for movie by title</button>
 
@@ -75,19 +75,20 @@ Programmer: MDB Group
     <li id="li4"></li>
     </ul>
 <img id="poster" src= " ">
-Date:
+<h3 class="moviespecs">Date:</h3>
 <p id="date"></p>
-Overview:
+<h3 class="moviespecs">Overview:</h3>
 <p id="overview"></p>
-Language:
+<h3 class="moviespecs">Language:</h3>
 <p id="language"></p>
-Popularity:
+<h3 class="moviespecs">Popularity:</h3>
 <p id="popularity"></p>
-Genre(s):
+<h3 class="moviespecs">Genre(s):</h3>
 <p id="genre"></p>
 </main>
 
 <section id="recommended" class="section group">
+    
     <p class="col span_2_of_12">
     <img id="relatedimg" src="" href="">
     <span id="related"></span>
