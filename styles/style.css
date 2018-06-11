@@ -80,6 +80,13 @@ main {
     color: dodgerblue;
 }
 
+#togglethis li {
+    color: darkgoldenrod;
+}
+
+#togglethis a {
+    text-decoration: none;
+}
 
 /* Now Playing Styling */
 
@@ -162,6 +169,10 @@ footer {
     padding: 5px;
     background-color: #F59B24;
     font-family: 'Share', sans-serif;
+}
+
+footer a {
+    color: black;
 }
 
 copyright {

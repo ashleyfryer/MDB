@@ -119,3 +119,5 @@ $(document).keypress(function(e){
                 $("#trigger").click();
             }
         });
+
+$("#copyright").text(new Date().getFullYear());
