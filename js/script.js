@@ -13,6 +13,12 @@ function getInput() {
     return query;
 }
 
+function clearLists () {
+    var recommendedList = $('#recommended');
+    
+    recommendedList.text(' ');
+}
+
 function nowPlaying() {
      var xhr = new XMLHttpRequest();
      xhr.open("GET", "https://api.themoviedb.org/3/movie/now_playing?api_key=3daaa224d520ad43baab7a6b2c604dca&language=en-US&page=1", false);
@@ -20,23 +26,17 @@ function nowPlaying() {
     console.log(xhr.status); // if this returns 200, then you are in like Flynn
     var moviePopular = JSON.parse(xhr.responseText);
     console.log(moviePopular);
-
-    $("#popular").text(moviePopular.results["0"].original_title);
-    $("#popularimg").attr("src", imageurlsmall + moviePopular.results["0"].poster_path);
-    $("#popularimg").wrap("<a href='#' onclick='getMovie(\"" + moviePopular.results["0"].original_title + "\")'></a>");
-    $("#popular1").text(moviePopular.results["1"].original_title);
-    $("#popular1img").attr("src", imageurlsmall + moviePopular.results["1"].poster_path);
-    $("#popular1img").wrap("<a href='#' onclick='getMovie(\"" + moviePopular.results["1"].original_title + "\")'></a>");
-    $("#popular2").text(moviePopular.results["2"].original_title);
-    $("#popular2img").attr("src", imageurlsmall + moviePopular.results["2"].poster_path);
-    $("#popular2img").wrap("<a href='#' onclick='getMovie(\"" + moviePopular.results["2"].original_title + "\")'></a>");
-    $("#popular3").text(moviePopular.results["3"].original_title);
-    $("#popular3img").attr("src", imageurlsmall + moviePopular.results["3"].poster_path);
-    $("#popular3img").wrap("<a href='#' onclick='getMovie(\"" + moviePopular.results["3"].original_title + "\")'></a>");
-    $("#popular4").text(moviePopular.results["4"].original_title);
-    $("#popular4img").attr("src", imageurlsmall + moviePopular.results["4"].poster_path);
-    $("#popular4img").wrap("<a href='#' onclick='getMovie(\"" + moviePopular.results["4"].original_title + "\")'></a>");
     
+    for (x=0; x < 5; x++) {
+        var popular = $("#nowplaying");
+        
+        var image = '<img src="' +  imageurlsmall + moviePopular.results[x].poster_path + '">';
+        
+        console.log (moviePopular.results[x].original_title);
+        
+        var nowPlaying = popular.append("<a href='#' onclick='getMovie(\"" + moviePopular.results[x].original_title + "\")'>" + '<p class="col span_2_of_12">' + moviePopular.results[x].original_title + image + '</p>' + "</a>");
+        
+    }
 }
 
 
@@ -48,22 +48,17 @@ function recommendMovie(movie) {
     xhr.send();
     console.log(xhr.status); // if this returns 200, then you are in like Flynn
     var movieDiscover = JSON.parse(xhr.responseText);
+    
+    clearLists();
+    
+    for (x=0; x < 5; x++) {
+        var discover = $("#recommended");
+        
+        var image = '<img src="' +  imageurlsmall + movieDiscover.results[x].poster_path + '">';
+        
+        var recommend = discover.append("<a href='#' onclick='getMovie(\"" + movieDiscover.results[x].original_title + "\")'>" +'<p class="col span_2_of_12">' + movieDiscover.results[x].original_title + image + '</p>' + "</a>");
 
-    $("#related").text(movieDiscover.results["0"].original_title);
-    $("#relatedimg").attr("src", imageurlsmall + movieDiscover.results["0"].poster_path);
-    $("#relatedimg").wrap("<a href='#' onclick='getMovie(\"" + movieDiscover.results["0"].original_title + "\")'></a>");
-    $("#related1").text(movieDiscover.results["1"].original_title);
-    $("#related1img").attr("src", imageurlsmall + movieDiscover.results["1"].poster_path);
-    $("#related1img").wrap("<a href='#' onclick='getMovie(\"" + movieDiscover.results["1"].original_title + "\")'></a>");
-    $("#related2").text(movieDiscover.results["2"].original_title);
-    $("#related2img").attr("src", imageurlsmall + movieDiscover.results["2"].poster_path);
-    $("#related2img").wrap("<a href='#' onclick='getMovie(\"" + movieDiscover.results["2"].original_title + "\")'></a>");
-    $("#related3").text(movieDiscover.results["3"].original_title);
-    $("#related3img").attr("src", imageurlsmall + movieDiscover.results["3"].poster_path);
-    $("#related3img").wrap("<a href='#' onclick='getMovie(\"" + movieDiscover.results["3"].original_title + "\")'></a>");
-    $("#related4").text(movieDiscover.results["4"].original_title);
-    $("#related4img").attr("src", imageurlsmall + movieDiscover.results["4"].poster_path);
-    $("#related4img").wrap("<a href='#' onclick='getMovie(\"" + movieDiscover.results["4"].original_title + "\")'></a>");
+    }   
 }
 
 function getMovie(input) {
@@ -83,17 +78,13 @@ function getMovie(input) {
     $("#language").text(movieObject.results["0"].original_language);
     $("#popularity").text(movieObject.results["0"].vote_average);
     $("#genre").text(movieObject.results["0"].genre_ids);
+    
+    for (x=0; x < 5; x++) {
+        var options = $(".otherMovies");
+        
+        var recommend = options.append("<a href='#' onclick='getMovie(\"" + movieObject.results[x].original_title + "\")'>" +'<li>' + movieObject.results[x].original_title + '</li>' + "</a>");
 
-    
-    $("#li1").text(movieObject.results["1"].original_title);
-    $("#li1").wrap("<a href='#' onclick='getMovie(\"" + movieObject.results["1"].original_title + "\")'></a>");
-    $("#li2").text(movieObject.results["2"].original_title);
-    $("#li2").wrap("<a href='#' onclick='getMovie(\"" + movieObject.results["2"].original_title + "\")'></a>");
-    $("#li3").text(movieObject.results["3"].original_title);
-    $("#li3").wrap("<a href='#' onclick='getMovie(\"" + movieObject.results["3"].original_title + "\")'></a>");
-    $("#li4").text(movieObject.results["4"].original_title);
-    $("#li4").wrap("<a href='#' onclick='getMovie(\"" + movieObject.results["4"].original_title + "\")'></a>");
-    
+    }
     recommendMovie(movieObject);
     
 }
