@@ -34,7 +34,7 @@ function nowPlaying() {
 
     console.log(moviePopular.results[x].title);
 
-    var nowPlaying = popular.append("<a href='#' onclick='getMovie(\"" + moviePopular.results[x].title + "\")'>" + '<p class="col span_2_of_12">' + moviePopular.results[x].title + image + '</p>' + "</a>");
+    var nowPlaying = popular.append("<a href='#' onclick='getMovie(\"" + moviePopular.results[x].title + "\")'>" + '<p class="col span_2_of_12">' + image + moviePopular.results[x].title + '</p>' + "</a>");
 
   }
 }
@@ -56,7 +56,7 @@ function recommendMovie(movie) {
 
     var image = '<img src="' + imageurlsmall + movieDiscover.results[x].poster_path + '">';
 
-    var recommend = discover.append("<a href='#' onclick='getMovie(\"" + movieDiscover.results[x].title + "\")'>" + '<p class="col span_2_of_12">' + movieDiscover.results[x].title + image + '</p>' + "</a>");
+    var recommend = discover.append("<a href='#' onclick='getMovie(\"" + movieDiscover.results[x].title + "\")'>" + '<p class="col span_2_of_12">' + image + movieDiscover.results[x].title + '</p>' + "</a>");
 
   }
 }

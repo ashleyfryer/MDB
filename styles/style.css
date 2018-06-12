@@ -142,6 +142,8 @@ button {
     text-align: center;
     background-color: darkgoldenrod;
     color: #000;
+    margin: 0 0 1em 0.5em;
+    cursor: pointer;
 }
 
 .searchform {
