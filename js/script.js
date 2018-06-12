@@ -168,7 +168,11 @@ function getMovie(input) {
             break;
         }
       }
-
+    
+      var otherMovies = $('.otherMovies');
+    
+        otherMovies.text('');
+    
       for (var x = 0; x < 5; x++) {
         var options = $(".otherMovies");
 
