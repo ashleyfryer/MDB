@@ -24,7 +24,7 @@ This grid divides the page into twelve sections. The span elements determine the
 /* The first column has a margin of zero so that all of the elements sit on the width of the page. The left padding makes the bullets align in the menu section of the tablet version. */
 .col:first-child { 
     margin-left: 0; 
-    padding-left: 1em;
+    padding-left: 2%;
 }
 
 /*  GROUPING  */
