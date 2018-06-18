@@ -6,10 +6,13 @@ Project: The Movie Database Project
 Date: 5/29/2018
 **/
 
+* {
+    box-sizing: content-box;
+}
+
 body {
     background-color: black;
     color: white;
-    padding: 2em;
     font-family: 'Share', sans-serif;
     font-size: 1.1em;
     line-height: 1.5em;
@@ -148,6 +151,16 @@ button {
 
 .searchform {
     color: dodgerblue;
+    text-align: center;
+}
+
+input, button {
+    display: inline-block;
+    padding: .5em;
+    margin: 1em;
+    width: 90%;
+    margin-left: 5%;
+    margin-right: 5%;
 }
 
 
@@ -168,9 +181,10 @@ footer {
     color: #000000;
     font-size: .80em;
     text-align: center;
-    padding: 5px;
+    padding: 1em;
     background-color: #F59B24;
     font-family: 'Share', sans-serif;
+    width: 100%;
 }
 
 footer a {
