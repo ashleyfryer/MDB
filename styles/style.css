@@ -35,7 +35,7 @@ h1 {
     font-family: 'Michroma', sans-serif;
     letter-spacing: 0.5em;
     word-spacing: 2.1pt;
-    margin: 1.5em;
+    margin: 1.5em .5em;
     font-weight: bold;
     text-transform: uppercase;
 }
@@ -154,6 +154,8 @@ input, button {
 
 #recommended img {
     width: 100%;
+    padding: 1em 3em;
+    box-sizing: border-box;
 }
 
 #recommended a {
@@ -192,6 +194,12 @@ copyright {
 #nowplaying img {
     width: 100%;
     padding: 0em;
+    box-sizing: border-box;
+    }
+    
+    #recommended img {
+    width: 100%;
+    padding: 0;
     box-sizing: border-box;
     }
     
