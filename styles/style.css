@@ -11,7 +11,7 @@ Date: 5/29/2018
 }
 
 body {
-    background-color: black;
+    background-color: #222;
     color: white;
     font-family: 'Share', sans-serif;
     font-size: 1.1em;
@@ -41,12 +41,12 @@ h1 {
 
 h1 a {
     text-decoration: none;
-    color: darkgoldenrod;
+    color: goldenrod;
 }
 
 h1 a:visited {
     text-decoration: none;
-    color: darkgoldenrod;
+    color: goldenrod;
 }
 
 
@@ -94,6 +94,10 @@ main {
     color: dodgerblue;
 }
 
+#toggle {
+    cursor: pointer;
+}
+
 #togglethis li {
     color: darkgoldenrod;
     display: block;
@@ -123,7 +127,7 @@ main {
 }
 
 #nowplaying a {
-    color: rebeccapurple;
+    color: darkgoldenrod;
 }
 
 /* Search Box Styling */
@@ -169,7 +173,7 @@ input, button {
 }
 
 #recommended a {
-    color: rebeccapurple;
+    color: #darkgoldenrod;
 }
 
 /* Footer and Copyright */
@@ -179,7 +183,7 @@ footer {
     font-size: .80em;
     text-align: center;
     padding: 1em;
-    background-color: #F59B24;
+    background-color: #99BECE;
     font-family: 'Share', sans-serif;
     width: 100%;
 }
