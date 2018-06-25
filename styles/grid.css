@@ -18,7 +18,6 @@ This grid divides the page into twelve sections. The span elements determine the
 .col {
 	display: block;
     float:left;
-	margin: 1% 0 1% 1.6%;
 }
 
 /* The first column has a margin of zero so that all of the elements sit on the width of the page. The left padding makes the bullets align in the menu section of the tablet version. */
@@ -84,7 +83,7 @@ This grid divides the page into twelve sections. The span elements determine the
 
 /** Edited from 15.33% **/
 .span_2_of_12 {
-  	width: 17%;
+  	width: 19.5%;
 }
 
 .span_1_of_12 {

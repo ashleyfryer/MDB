@@ -7,11 +7,13 @@ Date: 5/29/2018
 **/
 
 * {
-    box-sizing: content-box;
+    box-sizing: border-box;
 }
 
 body {
-    background-color: #222;
+    background: #0b007f;
+background-image: url("zenbg-1.png"), url("zenbg-2.png");
+background-repeat: repeat-x, repeat;
     color: white;
     font-family: 'Share', sans-serif;
     font-size: 1.1em;
@@ -34,7 +36,7 @@ h1 {
     font-family: 'Michroma', sans-serif;
     letter-spacing: 0.5em;
     word-spacing: 2.1pt;
-    margin: 1.5em .5em;
+    margin: 1em .5em;
     font-weight: bold;
     text-transform: uppercase;
 }
@@ -57,6 +59,7 @@ h2 {
     text-align: center;
     font-family: 'Michroma', serif;
     color: dodgerblue;
+    margin-bottom: 1em;
 }
 
 h3,
@@ -78,14 +81,13 @@ p {
 
 main {
     font-family: 'Share', sans-serif;
-    padding: 3% 10%;
+    padding: 13% 10%;
 }
 
 #poster {
     margin: 0 auto;
     display: block;
-    width: 80%;
-    padding: 2em;
+    padding: 3em;
 }
 
 .moviespecs {
@@ -96,6 +98,12 @@ main {
 
 #toggle {
     cursor: pointer;
+    padding: 0 2em 1em 2em;
+}
+
+#togglethis {
+    cursor: pointer;
+    padding: 0 2em 1em 3em;
 }
 
 #togglethis li {
@@ -118,6 +126,7 @@ main {
 #nowplaying {
     text-align: center;
     display: block;
+    margin-bottom: 2em;
 }
 
 #nowplaying img {
@@ -164,6 +173,7 @@ input, button {
 
 #recommended {
     text-align: center;
+    margin-top: 4em;
 }
 
 #recommended img {
@@ -173,23 +183,28 @@ input, button {
 }
 
 #recommended a {
-    color: #darkgoldenrod;
+    color: darkgoldenrod;
 }
 
 /* Footer and Copyright */
 
 footer {
-    color: #000000;
+    color: #F59B24;
     font-size: .80em;
     text-align: center;
     padding: 1em;
-    background-color: #99BECE;
+    background-color: #0b007f;
     font-family: 'Share', sans-serif;
     width: 100%;
+    margin-top: 2em;
 }
 
 footer a {
-    color: black;
+    color: #F59B24;
+}
+
+.movieinfo {
+    padding: 0 3em;
 }
 
 copyright {
@@ -233,7 +248,7 @@ copyright {
 
 @media only screen and (min-width: 768px) {
     #poster {
-        width: 50%;
+        width: 80%;
     }
     
     h1 {

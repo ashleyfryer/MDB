@@ -47,14 +47,14 @@ Programmer: MDB Group
  <button id="trigger" onclick="getMovie(getInput());">Search for movie by title</button>
 
 
-<main>
+<main class="section group">
 <h2 id="movietitle">Title- N/A</h2>
 <p id="toggle">Not the right movie?</p>
 
 <ul id="togglethis" class="otherMovies">
 </ul>
     
-<img id="poster" src= " ">
+<div class="movieinfo col span_7_of_12">
 <h3 class="moviespecs">Date:</h3>
 <p id="date"></p>
 <h3 class="moviespecs">Overview:</h3>
@@ -65,6 +65,9 @@ Programmer: MDB Group
 <p id="popularity"></p>
 <h3 class="moviespecs">Genre(s):</h3>
 <p id="genre"></p>
+</div>
+    
+<div class="col span_5_of_12"><img id="poster" src= " " ></div>
 </main>
 
 <section id="recommended" class="section group">
