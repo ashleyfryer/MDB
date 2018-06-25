@@ -12,8 +12,8 @@ Date: 5/29/2018
 
 body {
     background: #0b007f;
-background-image: url("zenbg-1.png"), url("zenbg-2.png");
-background-repeat: repeat-x, repeat;
+    background-image: url("zenbg-1.png"), url("zenbg-2.png");
+    background-repeat: repeat-x, repeat;
     color: white;
     font-family: 'Share', sans-serif;
     font-size: 1.1em;
@@ -37,18 +37,17 @@ h1 {
     letter-spacing: 0.5em;
     word-spacing: 2.1pt;
     margin: 1em .5em;
-    font-weight: bold;
     text-transform: uppercase;
 }
 
 h1 a {
     text-decoration: none;
-    color: goldenrod;
+    color: #E4B849;
 }
 
 h1 a:visited {
     text-decoration: none;
-    color: goldenrod;
+    color: #E4B849;
 }
 
 
@@ -107,12 +106,16 @@ main {
 }
 
 #togglethis li {
-    color: darkgoldenrod;
+    color: #E4B849;
     display: block;
 }
 
 #togglethis a {
     text-decoration: none;
+}
+
+.movieinfo {
+    padding: 0 3em;
 }
 
 /* Now Playing Styling */
@@ -121,6 +124,7 @@ main {
     font-family: 'Michroma', sans-serif;
     font-size: 2em;
     color: dodgerblue;
+    font-weight: bold;
 }
 
 #nowplaying {
@@ -136,7 +140,7 @@ main {
 }
 
 #nowplaying a {
-    color: darkgoldenrod;
+    color: goldenrod;
 }
 
 /* Search Box Styling */
@@ -183,13 +187,13 @@ input, button {
 }
 
 #recommended a {
-    color: darkgoldenrod;
+    color: goldenrod;
 }
 
 /* Footer and Copyright */
 
 footer {
-    color: #F59B24;
+    color: #E4B849;
     font-size: .80em;
     text-align: center;
     padding: 1em;
@@ -200,11 +204,7 @@ footer {
 }
 
 footer a {
-    color: #F59B24;
-}
-
-.movieinfo {
-    padding: 0 3em;
+    color: #E4B849;
 }
 
 copyright {
